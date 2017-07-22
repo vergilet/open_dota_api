@@ -28,6 +28,7 @@ require 'open_dota_api'
 
 ```
 
+Use available methods to gather the data:
 
 ```ruby
 # Leagues list
@@ -41,5 +42,4 @@ OpenDotaApi.matches(match_id)
 
 # Heroes list
 OpenDotaApi.heroes
-
 ```
