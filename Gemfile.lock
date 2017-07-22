@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    open_dota_api (0.0.2)
+    open_dota_api (0.0.3)
       hashable
       httparty
 
@@ -19,7 +19,7 @@ GEM
     ffi (1.9.18)
     hashable (0.1.2)
     hashdiff (0.3.4)
-    httparty (0.15.5)
+    httparty (0.15.6)
       multi_xml (>= 0.5.2)
     i18n (0.8.6)
     json (2.1.0)
