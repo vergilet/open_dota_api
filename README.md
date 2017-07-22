@@ -195,8 +195,10 @@ That's all for now.
 
 ## Contributing
 
+Bug reports and pull requests are welcome on GitHub at https://github.com/vergilet/open_dota_api
+
 Feel free to contribute:
-1. Fork it (https://github.com/droptheplot/adminable/fork)
+1. Fork it (https://github.com/vergilet/open_dota_api/fork)
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
