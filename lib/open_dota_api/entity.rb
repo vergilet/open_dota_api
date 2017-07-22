@@ -1,4 +1,5 @@
 require 'open_dota_api/entities/instantiable'
+require 'open_dota_api/entities/definable'
 require 'hashable'
 
 module OpenDotaApi
