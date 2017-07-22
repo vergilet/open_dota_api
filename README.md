@@ -57,4 +57,4 @@ OpenDotaApi.heroes
 ...
 
 ##
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vergilet/open_dota_api/master/LICENSE)
