@@ -31,15 +31,19 @@ require 'open_dota_api'
 Use available methods to gather the data:
 
 ```ruby
-# Leagues list
+# Leagues listing
 OpenDotaApi.leagues
 
-# Teams list
+# Teams listing
 OpenDotaApi.teams
 
 # Match details
 OpenDotaApi.matches(match_id)
 
-# Heroes list
+# Heroes listing
 OpenDotaApi.heroes
 ```
+
+## Warning!
+
+> Please keep request rate to approximately 3/s.
