@@ -18,18 +18,24 @@ gem 'open_dota_api'
 
 ## Using
 
+To use OpenDotaApi you can:
+
+```ruby
+
+require 'open_dota_api'
+
+```
+
+
 ```ruby
 # Leagues list
 OpenDotaApi.leagues
 
-
 # Teams list
 OpenDotaApi.teams
 
-
 # Match details
 OpenDotaApi.matches(match_id)
-
 
 # Heroes list
 OpenDotaApi.heroes
