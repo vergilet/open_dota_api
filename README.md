@@ -19,15 +19,19 @@ gem 'open_dota_api'
 ## Using
 
 ```ruby
-# leagues list
+# Leagues list
 OpenDotaApi.leagues
 
-# teams list
+
+# Teams list
 OpenDotaApi.teams
 
-# match details
+
+# Match details
 OpenDotaApi.matches(match_id)
 
-# heroes list
+
+# Heroes list
 OpenDotaApi.heroes
+
 ```
