@@ -40,7 +40,7 @@ require 'open_dota_api'
 
 ```
 
-Use available methods to gather the data:
+Use available methods to gather needed data:
 
 ```ruby
 # Leagues listing
