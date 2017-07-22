@@ -7,10 +7,12 @@ Please keep request rate to approximately 3/s.
 </aside>
 
 ###
+[![Travis branch](https://img.shields.io/travis/vergilet/open_dota_api/master.svg?style=flat-square)]()
 
 [![Build Status](https://travis-ci.org/vergilet/open_dota_api.svg?branch=master)](https://travis-ci.org/vergilet/open_dota_api)
 [![Code Climate](https://codeclimate.com/github/vergilet/open_dota_api/badges/gpa.svg)](https://codeclimate.com/github/vergilet/open_dota_api)
 [![Test Coverage](https://codeclimate.com/github/vergilet/open_dota_api/badges/coverage.svg)](https://codeclimate.com/github/vergilet/open_dota_api/coverage)
+[![Gem](https://img.shields.io/gem/v/formatador.svg?style=flat-square)]()
 
 
 ## Installation
@@ -58,3 +60,4 @@ OpenDotaApi.heroes
 
 ##
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vergilet/open_dota_api/master/LICENSE)
+[![Github All Releases](https://img.shields.io/github/downloads/vergilet/open_dota_api/total.svg?style=flat-square)]()
