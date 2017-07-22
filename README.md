@@ -197,22 +197,15 @@ That's all for now.
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/vergilet/open_dota_api
 
-<style>tr, td { border:none!important; }</style>
-<table style="border:none!important">
-  <tr style="border:none!important">
-    <td align="left" style="border:none!important">
-    <div>
-    Feel free to contribute: <br>
-1. Fork it (https://github.com/vergilet/open_dota_api/fork) <br>
-2. Create your feature branch (git checkout -b my-new-feature) <br>
-3. Commit your changes (git commit -am 'Add some feature') <br>
-4. Push to the branch (git push origin my-new-feature) <br>
-5. Create new Pull Request <br>
-</div>
-    </td>
-    <td align="right" style="border:none!important"><img src="https://user-images.githubusercontent.com/2478436/28493917-7c3389c8-6f28-11e7-932e-da360b68f3d3.gif"/></td>
-  </tr>
-</table>
+
+Feel free to contribute:
+1. Fork it (https://github.com/vergilet/open_dota_api/fork)
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
+
+    <img align="right" src="https://user-images.githubusercontent.com/2478436/28493917-7c3389c8-6f28-11e7-932e-da360b68f3d3.gif"/>
 
 ## License
 The gem is available as open source under the terms of the MIT License.
