@@ -31,7 +31,7 @@ describe OpenDotaApi::Match do
   end
 
   it 'is not instantiable' do
-    expect{ described_class.instantiate }.to raise_error NotImplementedError
+    expect { described_class.instantiate }.to raise_error NotImplementedError
   end
 
   describe 'default attributes' do
