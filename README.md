@@ -205,4 +205,5 @@ Feel free to contribute:
 ## License
 The gem is available as open source under the terms of the MIT License.
 
+Copyright (c) 2017 Yaro.
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/vergilet/open_dota_api/master/LICENSE)
