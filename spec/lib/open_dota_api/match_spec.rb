@@ -30,8 +30,8 @@ describe OpenDotaApi::Match do
     expect(match).to be_a OpenDotaApi::Entity
   end
 
-  it 'is instantiable' do
-    expect(match).to_not be_a OpenDotaApi::Entities::Instantiatable
+  it 'is not instantiable' do
+    expect{ described_class.instantiate }.to raise_error NotImplementedError
   end
 
   describe 'default attributes' do

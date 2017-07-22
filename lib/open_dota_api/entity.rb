@@ -4,6 +4,7 @@ require 'hashable'
 
 module OpenDotaApi
   class Entity
+    include Entities::Instantiatable
     include ::Hashable
 
     def initialize(data)

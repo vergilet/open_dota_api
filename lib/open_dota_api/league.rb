@@ -2,8 +2,6 @@ require 'open_dota_api/entity'
 
 module OpenDotaApi
   class League < Entity
-    include Entities::Instantiatable
-
     ENDPOINT = 'leagues'.freeze
 
     def league_id

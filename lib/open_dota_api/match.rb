@@ -5,6 +5,10 @@ module OpenDotaApi
   class Match < Entity
     ENDPOINT = 'matches'.freeze
 
+    def self.instantiate(data = nil)
+      raise NotImplementedError
+    end
+
     def match_id
       data['match_id']
     end
@@ -62,7 +66,7 @@ module OpenDotaApi
     end
 
     def players
-      data['players'].map { |player| Player.new(player) }
+      Player.instantiate(data['players'])
     end
 
     class Player < Matches::Player; end

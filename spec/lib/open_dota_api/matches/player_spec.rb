@@ -34,7 +34,7 @@ describe OpenDotaApi::Matches::Player do
   end
 
   it 'is instantiable' do
-    expect(player).to_not be_a OpenDotaApi::Entities::Instantiatable
+    expect(player).to be_a OpenDotaApi::Entities::Instantiatable
   end
 
   describe 'default attributes' do
