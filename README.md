@@ -2,7 +2,8 @@
 
 
 
-Unofficial Ruby Library for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. Please keep request rate to approximately 3/s.
+Unofficial Ruby Library for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
+Please keep request rate to approximately 3/s.
 
 
 ## Installation
