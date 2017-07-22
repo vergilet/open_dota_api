@@ -6,6 +6,9 @@ Unofficial Ruby Library for [OpenDotaAPI](https://docs.opendota.com/). This API 
 Please keep request rate to approximately 3/s.
 </aside>
 
+[![Code Climate](https://codeclimate.com/github/vergilet/open_dota_api/badges/gpa.svg)](https://codeclimate.com/github/vergilet/open_dota_api)
+[![Test Coverage](https://codeclimate.com/github/vergilet/open_dota_api/badges/coverage.svg)](https://codeclimate.com/github/vergilet/open_dota_api/coverage)
+
 
 ## Installation
 If you use Rubygems you can type:
