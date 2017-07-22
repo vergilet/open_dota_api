@@ -5,7 +5,7 @@ Unofficial Ruby Library for [OpenDotaAPI](https://docs.opendota.com/). This API 
 <aside class="notice">
 Please keep request rate to approximately 3/s.
 </aside>
-
+<br>
 [![Build Status](https://travis-ci.org/vergilet/open_dota_api.svg?branch=master)](https://travis-ci.org/vergilet/open_dota_api)
 [![Code Climate](https://codeclimate.com/github/vergilet/open_dota_api/badges/gpa.svg)](https://codeclimate.com/github/vergilet/open_dota_api)
 [![Test Coverage](https://codeclimate.com/github/vergilet/open_dota_api/badges/coverage.svg)](https://codeclimate.com/github/vergilet/open_dota_api/coverage)
