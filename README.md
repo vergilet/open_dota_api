@@ -7,7 +7,7 @@ Please keep request rate to approximately 3/s.
 </aside>
 
 ###
-
+[![Gem Version](https://badge.fury.io/rb/open_dota_api.svg)](https://badge.fury.io/rb/open_dota_api)
 [![Build Status](https://travis-ci.org/vergilet/open_dota_api.svg?branch=master)](https://travis-ci.org/vergilet/open_dota_api)
 [![Code Climate](https://codeclimate.com/github/vergilet/open_dota_api/badges/gpa.svg)](https://codeclimate.com/github/vergilet/open_dota_api)
 [![Test Coverage](https://codeclimate.com/github/vergilet/open_dota_api/badges/coverage.svg)](https://codeclimate.com/github/vergilet/open_dota_api/coverage)
