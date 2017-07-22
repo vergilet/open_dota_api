@@ -6,11 +6,13 @@ Unofficial Ruby Library for [OpenDotaAPI](https://docs.opendota.com/).
 
 
 ## Installation
+If you use Rubygems you can type:
+
 ```ruby
 gem install open_dota_api
 ```
 
-or add to your Gemfile:
+or add gem to your Gemfile:
 ```ruby
 gem 'open_dota_api'
 ```
