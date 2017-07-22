@@ -2,7 +2,7 @@
 
 
 
-Unofficial Ruby Library for [OpenDotaApi](https://docs.opendota.com/).
+Unofficial Ruby Library for [OpenDotaAPI](https://docs.opendota.com/).
 
 
 ## Installation
