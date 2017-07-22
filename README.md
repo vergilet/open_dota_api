@@ -4,7 +4,7 @@ Unofficial Ruby Library for [OpenDotaApi](https://docs.opendota.com/)
 
 
 ## Installation
-```
+```ruby
 gem install open_dota_api
 ```
 
