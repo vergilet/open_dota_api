@@ -46,4 +46,5 @@ OpenDotaApi.heroes
 
 ## Warning!
 
-> Please keep request rate to approximately 3/s.
+<aside class="warning"> Please keep request rate to approximately 3/s.
+</aside>
