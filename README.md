@@ -9,7 +9,7 @@ gem install open_dota_api
 ```
 
 or add to your Gemfile:
-```
+```ruby
 gem 'open_dota_api'
 ```
 
