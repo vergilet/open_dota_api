@@ -3,6 +3,7 @@ require 'open_dota_api/league'
 require 'open_dota_api/team'
 require 'open_dota_api/match'
 require 'open_dota_api/hero'
+require 'open_dota_api/pro_player'
 
 module OpenDotaApi
   class Client
@@ -30,6 +31,12 @@ module OpenDotaApi
       heroes_data = request(Hero::ENDPOINT)
       return {} unless heroes_data
       Hero.instantiate(heroes_data)
+    end
+
+    def pro_players
+      pro_players_data = request(ProPlayer::ENDPOINT)
+      return {} unless pro_players_data
+      ProPlayer.instantiate(pro_players_data)
     end
 
     private

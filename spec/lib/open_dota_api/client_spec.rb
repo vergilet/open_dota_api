@@ -9,6 +9,7 @@ describe OpenDotaApi::Client do
   let(:teams_file) { File.read('spec/data/teams.json') }
   let(:match_file) { File.read('spec/data/match.json') }
   let(:heroes_file) { File.read('spec/data/heroes.json') }
+  let(:pro_players_file) { File.read('spec/data/pro_players.json') }
   let(:data_file) {  }
   let(:headers) do
     {
@@ -21,6 +22,7 @@ describe OpenDotaApi::Client do
   let(:expected_teams) { OpenDotaApi::Team.instantiate(response_json) }
   let(:expected_match) { OpenDotaApi::Match.new(response_json) }
   let(:expected_heroes) { OpenDotaApi::Hero.instantiate(response_json) }
+  let(:expected_pro_players) { OpenDotaApi::ProPlayers.instantiate(response_json) }
 
   before do
     stub_request(:get, "http://api.opendota.com/api/#{endpoint}/").
@@ -83,6 +85,19 @@ describe OpenDotaApi::Client do
 
       it 'returns list' do
         expect(client.heroes.to_deep_hash).to eq expected_heroes.to_deep_hash
+      end
+    end
+
+    describe '#pro_players' do
+      let(:endpoint) { "#{OpenDotaApi::ProPlayer::ENDPOINT}" }
+      let(:data_file) { pro_players_file }
+
+      it 'returns array of objects' do
+        expect(client.pro_players.all? { |hero| hero.kind_of? OpenDotaApi::ProPlayer }).to be_truthy
+      end
+
+      it 'returns list' do
+        expect(client.pro_players.to_deep_hash).to eq expected_heroes.to_deep_hash
       end
     end
   end
