@@ -1,34 +1,33 @@
 require 'spec_helper'
 
 describe OpenDotaApi::ProPlayer do
-  let(:account_id) { 1 }
-  let(:steam_id) { 'npc_dota_pro_player_antimage' }
-  let(:avatar) { 'Anti-Mage' }
-  let(:avatar_medium) { 'Anti-Mage' }
-  let(:avatar_full) { 'Anti-Mage' }
-  let(:profile_url) { 'Anti-Mage' }
-  let(:persona_name) { 'Anti-Mage' }
-  let(:last_login) { 'Anti-Mage' }
-  let(:full_history_time) { 'Anti-Mage' }
-  let(:cheese) { 'Anti-Mage' }
-  let(:fh_unavailable) { 'Anti-Mage' }
-  let(:loc_country_code) { 'Anti-Mage' }
-  let(:last_match_time) { 'Anti-Mage' }
-  let(:name) { 'Anti-Mage' }
-  let(:country_code) { 'Anti-Mage' }
-  let(:fantasy_role) { 'Anti-Mage' }
-  let(:team_id) { 'Anti-Mage' }
-  let(:team_name) { 'Anti-Mage' }
-  let(:team_tag) { 'Anti-Mage' }
-  let(:is_locked) { 'Anti-Mage' }
-  let(:is_pro) { 'Anti-Mage' }
-  let(:locked_until) { 'Anti-Mage' }
-
+  let(:account_id) { 1_296_625 }
+  let(:steam_id) { '76561197961562353' }
+  let(:avatar) { 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/95/951e9165740fda890651d8475fc50f5368a847bb.jpg' }
+  let(:avatar_medium) { 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/95/951e9165740fda890651d8475fc50f5368a847bb_medium.jpg' }
+  let(:avatar_full) { 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/95/951e9165740fda890651d8475fc50f5368a847bb_full.jpg' }
+  let(:profile_url) { 'http://steamcommunity.com/id/jnewsham/' }
+  let(:persona_name) { 'Newsham' }
+  let(:last_login) { Time.parse('2016-06-10 20:24:48.743000000 +0000').utc }
+  let(:full_history_time) { Time.parse('2015-10-27 05:14:26.768000000 +0000') }
+  let(:cheese) { 0 }
+  let(:fh_unavailable) { false }
+  let(:loc_country_code) { 'US' }
+  let(:last_match_time) { Time.parse('2017-06-28 03:13:57.000000000 +0000') }
+  let(:name) { 'Newsham' }
+  let(:country_code) { 'us' }
+  let(:fantasy_role) { 2 }
+  let(:team_id) { 3_724_222 }
+  let(:team_name) { 'Team Red' }
+  let(:team_tag) { 'Red' }
+  let(:is_locked) { true }
+  let(:is_pro) { true }
+  let(:locked_until) { 1_502_694_000 }
 
   let(:pro_players_file) { File.read('spec/data/pro_players.json') }
   let(:response_json) { JSON.parse(pro_players_file) }
   let(:pro_players) { OpenDotaApi::ProPlayer.instantiate(response_json) }
-  let(:pro_player) { pro_players[433] }
+  let(:pro_player) { pro_players[8] } # Red.Newsham
 
   it 'returns endpoint' do
     expect(described_class::ENDPOINT).to eq 'proPlayers'
@@ -101,10 +100,6 @@ describe OpenDotaApi::ProPlayer do
 
     it 'returns country code' do
       expect(pro_player.country_code).to eq country_code
-    end
-
-    it 'returns fantasy role' do
-      expect(pro_player.fantasy_role).to eq fantasy_role
     end
 
     it 'returns fantasy role' do
