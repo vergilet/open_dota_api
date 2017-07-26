@@ -189,6 +189,47 @@ hero.attack_type
 hero.roles                # array of roles
 hero.legs
 ```
+
+#### Pro Players
+
+##### API Method: [proPlayers](https://docs.opendota.com/#tag/proPlayers)
+
+
+```ruby
+pro_players = OpenDotaApi.pro_players
+pro_players.class              # array        
+```
+
+```ruby
+pro_player = pro_players.first
+pro_player.class               # OpenDotaApi::ProPlayer    
+```
+
+```ruby
+pro_player.account_id
+pro_player.steam_id
+pro_player.avatar
+pro_player.avatar_medium
+pro_player.avatar_full
+pro_player.profile_url
+pro_player.persona_name
+pro_player.last_login
+pro_player.full_history_time
+pro_player.cheese
+pro_player.fh_unavailable
+pro_player.loc_country_code
+pro_player.last_match_time
+pro_player.name
+pro_player.country_code
+pro_player.fantasy_role
+pro_player.team_id
+pro_player.team_name
+pro_player.team_tag
+pro_player.is_locked
+pro_player.is_pro
+pro_player.locked_until
+```
+
 ...
 
 That's all for now.
