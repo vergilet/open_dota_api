@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ['osyaroslav@gmail.com.com']
   s.homepage    = 'https://github.com/vergilet/open-dota-api'
   s.summary     = 'Ruby wrapper for Open Dota API'
-  s.description = 'Ruby wrapper for Open Dota API'
+  s.description = 'Unofficial Ruby Library for OpenDotaAPI. This API provides Dota 2 related data.'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
