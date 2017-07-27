@@ -17,13 +17,12 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'httparty'
-  s.add_dependency 'hashable'
+  s.add_dependency 'httparty', '~> 0.15.6'
+  s.add_dependency 'hashable', '~> 0.1.2'
 
-  s.add_development_dependency 'listen'
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'webmock'
-  s.add_development_dependency 'faker'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'rake'
+  s.add_development_dependency 'listen', '~> 3.1.5'
+  s.add_development_dependency 'rspec', '~> 3.6.0'
+  s.add_development_dependency 'webmock', '~> 3.0.1'
+  s.add_development_dependency 'simplecov', '~> 0.14.1'
+  s.add_development_dependency 'rake', '~> 12.0.0'
 end
