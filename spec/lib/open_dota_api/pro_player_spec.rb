@@ -27,7 +27,7 @@ describe OpenDotaApi::ProPlayer do
   let(:pro_players_file) { File.read('spec/data/pro_players.json') }
   let(:response_json) { JSON.parse(pro_players_file) }
   let(:pro_players) { OpenDotaApi::ProPlayer.instantiate(response_json) }
-  let(:pro_player) { pro_players[8] } # Red.Newsham
+  let(:pro_player) { pro_players.first } # Red.Newsham
 
   it 'returns endpoint' do
     expect(described_class::ENDPOINT).to eq 'proPlayers'
