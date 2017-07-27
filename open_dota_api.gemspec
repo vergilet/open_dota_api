@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = OpenDotaApi::VERSION
   s.authors     = ['Yaroslav Oslavskiy']
   s.email       = ['osyaroslav@gmail.com.com']
-  s.homepage    = 'https://github.com/vergilet/open-dota-api'
+  s.homepage    = 'https://github.com/vergilet/open_dota_api'
   s.summary     = 'Ruby wrapper for Open Dota API'
   s.description = 'Unofficial Ruby Library for OpenDotaAPI. This API provides Dota 2 related data.'
   s.license     = 'MIT'
