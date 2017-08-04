@@ -54,6 +54,9 @@ OpenDotaApi.matches(match_id)
 
 # Heroes listing
 OpenDotaApi.heroes
+
+# Pro players listing
+OpenDotaApi.pro_players
 ```
 
 ## Endpoints
