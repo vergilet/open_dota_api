@@ -6,7 +6,7 @@ describe OpenDotaApi::Hero do
   let(:localized_name) { 'Anti-Mage' }
   let(:primary_attr) { 'agi' }
   let(:attack_type) { 'Melee' }
-  let(:roles) { %w(Carry Escape Nuker) }
+  let(:roles) { %w[Carry Escape Nuker] }
   let(:legs) { 2 }
 
   let(:heroes_file) { File.read('spec/data/heroes.json') }

@@ -30,11 +30,11 @@ module OpenDotaApi
     end
 
     def radiant_team_id
-      data['radiant_team']['team_id']
+      data.dig('radiant_team', 'team_id')
     end
 
     def dire_team_id
-      data['dire_team']['team_id']
+      data.dig('dire_team', 'team_id')
     end
 
     def match_seq_num
