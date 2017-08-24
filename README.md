@@ -11,6 +11,7 @@ Please keep request rate to approximately 3/s.
 [![Build Status](https://travis-ci.org/vergilet/open_dota_api.svg?branch=master)](https://travis-ci.org/vergilet/open_dota_api)
 [![Code Climate](https://codeclimate.com/github/vergilet/open_dota_api/badges/gpa.svg)](https://codeclimate.com/github/vergilet/open_dota_api)
 [![Test Coverage](https://codeclimate.com/github/vergilet/open_dota_api/badges/coverage.svg)](https://codeclimate.com/github/vergilet/open_dota_api/coverage)
+[![Dependency Status](https://gemnasium.com/badges/github.com/vergilet/open_dota_api.svg)](https://gemnasium.com/github.com/vergilet/open_dota_api)
 
 ## Installation
 If you use Rubygems you can type:
@@ -54,6 +55,9 @@ OpenDotaApi.matches(match_id)
 
 # Heroes listing
 OpenDotaApi.heroes
+
+# Pro players listing
+OpenDotaApi.pro_players
 ```
 
 ## Endpoints
@@ -132,6 +136,8 @@ match.cluster
 match.replay_salt
 match.cluster
 match.replay_url
+match.radiant_score         # Integer
+match.dire_score            # Integer
 match.players               # array of players (type OpenDotaApi::Matches::Player)
 ```
 ##### Player
