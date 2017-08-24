@@ -136,6 +136,8 @@ match.cluster
 match.replay_salt
 match.cluster
 match.replay_url
+match.radiant_score         # Integer
+match.dire_score            # Integer
 match.players               # array of players (type OpenDotaApi::Matches::Player)
 ```
 ##### Player
