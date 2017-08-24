@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    open_dota_api (0.2.4)
+    open_dota_api (0.2.5)
       hashable (~> 0.1.2)
       httparty (~> 0.15.6)
 
@@ -67,4 +67,4 @@ DEPENDENCIES
   webmock (~> 3.0, >= 3.0.1)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
