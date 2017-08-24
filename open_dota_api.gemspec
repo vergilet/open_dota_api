@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'listen', '~> 3.1', '>= 3.1.5'
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
   s.add_development_dependency 'webmock', '~> 3.0', '>= 3.0.1'
-  s.add_development_dependency 'simplecov', '~> 0.14.1'
+  s.add_development_dependency 'simplecov', '~> 0.15.0'
   s.add_development_dependency 'rake', '~> 12.0', '>= 12.0.0'
 end
