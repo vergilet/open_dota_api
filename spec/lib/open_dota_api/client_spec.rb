@@ -3,17 +3,19 @@ require 'spec_helper'
 describe OpenDotaApi::Client do
 
   let(:client) { described_class.new }
-  let(:endpoint) { }
+  let(:endpoint) {}
   let(:match_id) { 3149215336 }
+  let(:league_id) { 5401 }
   let(:leagues_file) { File.read('spec/data/leagues.json') }
   let(:teams_file) { File.read('spec/data/teams.json') }
   let(:match_file) { File.read('spec/data/match.json') }
   let(:heroes_file) { File.read('spec/data/heroes.json') }
   let(:pro_players_file) { File.read('spec/data/pro_players.json') }
-  let(:data_file) {  }
+  let(:explorer_file) { File.read('spec/data/explorer.json') }
+  let(:data_file) {}
   let(:headers) do
     {
-      "content-type"=>["application/json; charset=utf-8"]
+        "content-type" => ["application/json; charset=utf-8"]
     }
   end
 
@@ -24,10 +26,12 @@ describe OpenDotaApi::Client do
   let(:expected_heroes) { OpenDotaApi::Hero.instantiate(response_json) }
   let(:expected_pro_players) { OpenDotaApi::ProPlayers.instantiate(response_json) }
 
+  let(:api_url) {"http://api.opendota.com/api/#{endpoint}/"}
+
   before do
-    stub_request(:get, "http://api.opendota.com/api/#{endpoint}/").
-      with(headers: {'Accept': '*/*', 'Accept-Encoding': 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent': 'Ruby'}).
-      to_return(status: 200, body: data_file, headers: headers)
+    stub_request(:get, api_url).
+        with(headers: { 'Accept': '*/*', 'Accept-Encoding': 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent': 'Ruby' }).
+        to_return(status: 200, body: data_file, headers: headers)
   end
 
   it 'returns interface' do
@@ -99,6 +103,18 @@ describe OpenDotaApi::Client do
       it 'returns list' do
         expect(client.pro_players.to_deep_hash).to eq expected_heroes.to_deep_hash
       end
+    end
+
+    describe '#explorer' do
+      let(:query) { OpenDotaApi::Explorer.query_params(league_id) }
+      let(:endpoint) { "#{OpenDotaApi::Explorer::ENDPOINT}/?#{query.keys[0]}=#{query.values[0]}" }
+      let(:data_file) { explorer_file }
+      let(:api_url) {"http://api.opendota.com/api/#{endpoint}"}
+
+      it 'returns array of match ids' do
+        expect(client.explorer(league_id).league_matches_ids.kind_of? Array).to be_truthy
+      end
+
     end
   end
 end
