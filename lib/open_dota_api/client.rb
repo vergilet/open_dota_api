@@ -52,8 +52,7 @@ module OpenDotaApi
       @connection ||= Connection.new
     end
 
-
-    def request(method, argument= nil, query_params: nil)
+    def request(method, argument = nil, query_params: nil)
       argument = argument ? argument.to_s.concat('/') : nil
       pathname = "/#{INTERFACE}/#{method}/#{argument}"
       connection.get(pathname, query: query_params)

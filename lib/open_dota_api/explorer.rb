@@ -4,13 +4,12 @@ module OpenDotaApi
   class Explorer < Entity
     ENDPOINT = 'explorer'.freeze
 
-
     def self.instantiate(_ = nil)
       raise NotImplementedError
     end
 
     def league_matches_ids
-    data['rows'].map! {|obj| obj['match_id']}
+      data['rows'].map! { |obj| obj['match_id'] }
     end
 
     def self.query_params(league_id)
