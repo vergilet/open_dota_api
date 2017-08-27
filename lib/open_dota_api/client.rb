@@ -12,25 +12,25 @@ module OpenDotaApi
 
     def leagues
       leagues_data = request(League::ENDPOINT)
-      return {} unless leagues_data
+      return {} unless leagues_data.success?
       League.instantiate(leagues_data)
     end
 
     def teams
       teams_data = request(Team::ENDPOINT)
-      return {} unless teams_data
+      return {} unless teams_data.success?
       Team.instantiate(teams_data)
     end
 
     def matches(match_id = nil)
       match_data = request(Match::ENDPOINT, match_id)
-      return {} unless match_data
+      return {} unless match_data.success?
       Match.new(match_data)
     end
 
     def heroes
       heroes_data = request(Hero::ENDPOINT)
-      return {} unless heroes_data
+      return {} unless heroes_data.success?
       Hero.instantiate(heroes_data)
     end
 
@@ -42,7 +42,7 @@ module OpenDotaApi
 
     def explorer(league_id = nil)
       explorer_data = request(Explorer::ENDPOINT, query_params: Explorer.query_params(league_id))
-      return {} unless explorer_data
+      return {} unless explorer_data.success?
       Explorer.new(explorer_data)
     end
 

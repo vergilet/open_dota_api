@@ -114,7 +114,6 @@ describe OpenDotaApi::Client do
       it 'returns array of match ids' do
         expect(client.explorer(league_id).league_matches_ids.kind_of? Array).to be_truthy
       end
-
     end
   end
 end
