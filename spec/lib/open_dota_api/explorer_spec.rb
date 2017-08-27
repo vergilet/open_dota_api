@@ -20,7 +20,7 @@ describe OpenDotaApi::Explorer do
   end
 
   describe 'default attributes' do
-    it 'returns id' do
+    it 'returns ids' do
       expect(explorer.league_matches_ids).to match_array(match_ids)
     end
   end
