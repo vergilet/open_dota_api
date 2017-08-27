@@ -16,11 +16,11 @@ describe OpenDotaApi::Explorer do
   end
 
   it 'inherits entity object' do
-    expect(match_ids).to be_a Array
+    expect(explorer).to be_a OpenDotaApi::Entity
   end
 
   describe 'default attributes' do
-    it 'returns ids' do
+    it "returns league's matches ids" do
       expect(explorer.league_matches_ids).to match_array(match_ids)
     end
   end
