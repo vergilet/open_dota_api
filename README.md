@@ -58,6 +58,10 @@ OpenDotaApi.heroes
 
 # Pro players listing
 OpenDotaApi.pro_players
+
+# Explorer output (limited)
+OpenDotaApi.explorer(league_id)
+
 ```
 
 ## Endpoints
@@ -236,6 +240,20 @@ pro_player.is_pro
 pro_player.locked_until
 ```
 
+
+#### Explorer
+
+##### API Method: [explorer](https://docs.opendota.com/#tag/explorer)
+
+
+```ruby
+explorer = OpenDotaApi.explorer(league_id)
+explorer.class                  # OpenDotaApi::Explorer       
+```
+
+```ruby
+explorer.league_matches_ids     # Array of matches IDs for current league 
+```
 ...
 
 That's all for now.
