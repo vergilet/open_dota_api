@@ -4,6 +4,7 @@ require 'open_dota_api/team'
 require 'open_dota_api/match'
 require 'open_dota_api/hero'
 require 'open_dota_api/pro_player'
+require 'open_dota_api/explorer'
 
 module OpenDotaApi
   class Client
@@ -39,16 +40,22 @@ module OpenDotaApi
       ProPlayer.instantiate(pro_players_data)
     end
 
+    def explorer(league_id = nil)
+      explorer_data = request(Explorer::ENDPOINT, query_params: Explorer.query_params(league_id))
+      return {} unless explorer_data
+      Explorer.new(explorer_data)
+    end
+
     private
 
     def connection
       @connection ||= Connection.new
     end
 
-    def request(method, argument = nil)
+    def request(method, argument = nil, query_params: nil)
       argument = argument ? argument.to_s.concat('/') : nil
       pathname = "/#{INTERFACE}/#{method}/#{argument}"
-      connection.get(pathname)
+      connection.get(pathname, query: query_params)
     end
   end
 end
