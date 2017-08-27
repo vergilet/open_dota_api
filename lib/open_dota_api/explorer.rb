@@ -15,7 +15,7 @@ module OpenDotaApi
     end
 
     def league_matches_ids
-      data['rows'].map! { |obj| obj['match_id'] }
+      data['rows'].map { |obj| obj['match_id'] }
     end
   end
 end
