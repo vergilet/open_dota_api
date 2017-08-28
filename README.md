@@ -282,3 +282,4 @@ Copyright © 2017 Yaro.
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/vergilet/open_dota_api/master/LICENSE)
 
 
+[![Analytics](https://ga-beacon.appspot.com/UA-105400261-1/welcome-page)](https://github.com/vergilet/open_dota_api)
