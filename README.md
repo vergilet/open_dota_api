@@ -67,7 +67,7 @@ OpenDotaApi.explorer(league_id)
 
 ## Endpoints
 
-#### :radio_button: Leagues
+#### :large_blue_diamond: Leagues
 
 ##### API Method: [leagues](https://docs.opendota.com/#tag/leagues)
 
@@ -88,7 +88,7 @@ league.tier            # String, premiere, pro, amateur
 league.name            # String, league name
 
 ```
-#### :white_medium_small_square: Teams
+#### :large_blue_diamond: Teams
 
 ##### API Method: [teams](https://docs.opendota.com/#tag/teams)
 
@@ -112,7 +112,7 @@ team.name
 team.tag
 ```
 
-#### :white_medium_small_square: Matches
+#### :large_blue_diamond: Matches
 
 ##### API Method: [matches](https://docs.opendota.com/#tag/matches)
 
@@ -146,7 +146,7 @@ match.radiant_score         # Integer
 match.dire_score            # Integer
 match.players               # array of players (type OpenDotaApi::Matches::Player)
 ```
-##### :white_small_square: Player
+##### :small_blue_diamond: Player
 
 ```ruby
 players = match.players 
@@ -178,7 +178,7 @@ player.roshan_kills
 player.hero_healing
 ```
 
-#### :white_medium_small_square: Heroes
+#### :large_blue_diamond: Heroes
 
 ##### API Method: [heroes](https://docs.opendota.com/#tag/heroes)
 
@@ -202,7 +202,7 @@ hero.roles                # array of roles
 hero.legs
 ```
 
-#### :white_medium_small_square: Pro Players
+#### :large_blue_diamond: Pro Players
 
 ##### API Method: [proPlayers](https://docs.opendota.com/#tag/proPlayers)
 
@@ -243,7 +243,7 @@ pro_player.locked_until
 ```
 
 
-#### :white_medium_small_square: Explorer
+#### :large_blue_diamond: Explorer
 
 ##### API Method: [explorer](https://docs.opendota.com/#tag/explorer)
 
