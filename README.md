@@ -2,9 +2,9 @@
 
 ###
 
-Unofficial Ruby Gem for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
+:gem: Unofficial Ruby Gem for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
 ###
-Please keep request rate to approximately 3/s.
+:warning: Please keep request rate to approximately 3/s.
 
 ###
 [![Gem Version](https://badge.fury.io/rb/open_dota_api.svg)](https://badge.fury.io/rb/open_dota_api)
@@ -67,7 +67,7 @@ OpenDotaApi.explorer(league_id)
 
 ## Endpoints
 
-#### Leagues
+#### :white_medium_small_square: Leagues
 
 ##### API Method: [leagues](https://docs.opendota.com/#tag/leagues)
 
@@ -88,7 +88,7 @@ league.tier            # String, premiere, pro, amateur
 league.name            # String, league name
 
 ```
-#### Teams
+#### :white_medium_small_square: Teams
 
 ##### API Method: [teams](https://docs.opendota.com/#tag/teams)
 
@@ -111,7 +111,8 @@ team.last_match_time
 team.name
 team.tag
 ```
-#### Matches
+
+#### :white_medium_small_square: Matches
 
 ##### API Method: [matches](https://docs.opendota.com/#tag/matches)
 
@@ -145,7 +146,7 @@ match.radiant_score         # Integer
 match.dire_score            # Integer
 match.players               # array of players (type OpenDotaApi::Matches::Player)
 ```
-##### Player
+##### :white_small_square: Player
 
 ```ruby
 players = match.players 
@@ -177,7 +178,7 @@ player.roshan_kills
 player.hero_healing
 ```
 
-#### Heroes
+#### :white_medium_small_square: Heroes
 
 ##### API Method: [heroes](https://docs.opendota.com/#tag/heroes)
 
@@ -201,7 +202,7 @@ hero.roles                # array of roles
 hero.legs
 ```
 
-#### Pro Players
+#### :white_medium_small_square: Pro Players
 
 ##### API Method: [proPlayers](https://docs.opendota.com/#tag/proPlayers)
 
@@ -242,7 +243,7 @@ pro_player.locked_until
 ```
 
 
-#### Explorer
+#### :white_medium_small_square: Explorer
 
 ##### API Method: [explorer](https://docs.opendota.com/#tag/explorer)
 
