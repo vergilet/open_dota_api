@@ -4,7 +4,7 @@
 
 :gem: Unofficial Ruby Gem for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
 ###
-:warning: Please keep request rate to approximately 3/s.
+> :warning: Please keep request rate to approximately 3/s.
 
 ###
 [![Gem Version](https://badge.fury.io/rb/open_dota_api.svg)](https://badge.fury.io/rb/open_dota_api)
