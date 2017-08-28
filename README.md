@@ -67,7 +67,7 @@ OpenDotaApi.explorer(league_id)
 
 ## Endpoints
 
-#### :white_medium_small_square: Leagues
+#### :radio_button: Leagues
 
 ##### API Method: [leagues](https://docs.opendota.com/#tag/leagues)
 
