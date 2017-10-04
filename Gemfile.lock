@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    open_dota_api (0.2.3)
+    open_dota_api (0.3.1)
       hashable (~> 0.1.2)
       httparty (~> 0.15.6)
 
@@ -45,11 +45,11 @@ GEM
     rspec-support (3.6.0)
     ruby_dep (1.5.0)
     safe_yaml (1.0.4)
-    simplecov (0.14.1)
+    simplecov (0.15.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.1)
+    simplecov-html (0.10.2)
     webmock (3.0.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -63,8 +63,8 @@ DEPENDENCIES
   open_dota_api!
   rake (~> 12.0, >= 12.0.0)
   rspec (~> 3.6, >= 3.6.0)
-  simplecov (~> 0.14.1)
+  simplecov (~> 0.15.0)
   webmock (~> 3.0, >= 3.0.1)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4

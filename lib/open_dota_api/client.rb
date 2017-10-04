@@ -4,6 +4,7 @@ require 'open_dota_api/team'
 require 'open_dota_api/match'
 require 'open_dota_api/hero'
 require 'open_dota_api/pro_player'
+require 'open_dota_api/explorer'
 
 module OpenDotaApi
   class Client
@@ -11,25 +12,25 @@ module OpenDotaApi
 
     def leagues
       leagues_data = request(League::ENDPOINT)
-      return {} unless leagues_data
+      return {} unless leagues_data.success?
       League.instantiate(leagues_data)
     end
 
     def teams
       teams_data = request(Team::ENDPOINT)
-      return {} unless teams_data
+      return {} unless teams_data.success?
       Team.instantiate(teams_data)
     end
 
     def matches(match_id = nil)
       match_data = request(Match::ENDPOINT, match_id)
-      return {} unless match_data
+      return {} unless match_data.success?
       Match.new(match_data)
     end
 
     def heroes
       heroes_data = request(Hero::ENDPOINT)
-      return {} unless heroes_data
+      return {} unless heroes_data.success?
       Hero.instantiate(heroes_data)
     end
 
@@ -39,16 +40,22 @@ module OpenDotaApi
       ProPlayer.instantiate(pro_players_data)
     end
 
+    def explorer(league_id = nil)
+      explorer_data = request(Explorer::ENDPOINT, query_params: Explorer.query_params(league_id))
+      return {} unless explorer_data.success?
+      Explorer.new(explorer_data)
+    end
+
     private
 
     def connection
       @connection ||= Connection.new
     end
 
-    def request(method, argument = nil)
+    def request(method, argument = nil, query_params: nil)
       argument = argument ? argument.to_s.concat('/') : nil
       pathname = "/#{INTERFACE}/#{method}/#{argument}"
-      connection.get(pathname)
+      connection.get(pathname, query: query_params)
     end
   end
 end

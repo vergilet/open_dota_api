@@ -69,6 +69,14 @@ module OpenDotaApi
       Player.instantiate(data['players'])
     end
 
+    def radiant_score
+      data['radiant_score']
+    end
+
+    def dire_score
+      data['dire_score']
+    end
+
     class Player < Matches::Player; end
   end
 end

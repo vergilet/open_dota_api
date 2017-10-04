@@ -1,3 +1,3 @@
 module OpenDotaApi
-  VERSION = '0.2.3'.freeze
+  VERSION = '0.3.1'.freeze
 end

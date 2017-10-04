@@ -17,6 +17,8 @@ describe OpenDotaApi::Match do
     let(:replay_salt) { 565_926_067 }
     let(:replay_url) { 'http://replay136.valve.net/570/3149215336_565926067.dem.bz2' }
     let(:players_length) { 10 }
+    let(:radiant_score) { 27 }
+    let(:dire_score) { 29 }
     let(:player_class) { OpenDotaApi::Match::Player }
 
     let(:match_file) { File.read('spec/data/match.json') }
@@ -96,6 +98,14 @@ describe OpenDotaApi::Match do
         expect(match.players.length).to eq players_length
         expect(match.players.all? { |player| player.is_a? player_class }).to be_truthy
       end
+
+      it 'returns radiant score' do
+        expect(match.radiant_score).to eq radiant_score
+      end
+
+      it 'returns dire score' do
+        expect(match.dire_score).to eq dire_score
+      end
     end
   end
 
@@ -115,6 +125,8 @@ describe OpenDotaApi::Match do
     let(:replay_salt) { 120_334_496 }
     let(:replay_url) { 'http://replay192.valve.net/570/3344092796_120334496.dem.bz2' }
     let(:players_length) { 10 }
+    let(:radiant_score) { 29 }
+    let(:dire_score) { 32 }
     let(:player_class) { OpenDotaApi::Match::Player }
 
     let(:match_file) { File.read('spec/data/unofficial_match.json') }
@@ -188,6 +200,14 @@ describe OpenDotaApi::Match do
 
       it 'returns replay url' do
         expect(match.replay_url).to eq replay_url
+      end
+
+      it 'returns radiant score' do
+        expect(match.radiant_score).to eq radiant_score
+      end
+
+      it 'returns dire score' do
+        expect(match.dire_score).to eq dire_score
       end
 
       it 'returns players' do

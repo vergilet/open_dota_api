@@ -2,16 +2,18 @@
 
 ###
 
-Unofficial Ruby Library for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
-###
-Please keep request rate to approximately 3/s.
+:gem: Unofficial Ruby Gem for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
 
 ###
 [![Gem Version](https://badge.fury.io/rb/open_dota_api.svg)](https://badge.fury.io/rb/open_dota_api)
 [![Build Status](https://travis-ci.org/vergilet/open_dota_api.svg?branch=master)](https://travis-ci.org/vergilet/open_dota_api)
 [![Code Climate](https://codeclimate.com/github/vergilet/open_dota_api/badges/gpa.svg)](https://codeclimate.com/github/vergilet/open_dota_api)
 [![Test Coverage](https://codeclimate.com/github/vergilet/open_dota_api/badges/coverage.svg)](https://codeclimate.com/github/vergilet/open_dota_api/coverage)
-[![Dependency Status](https://gemnasium.com/badges/github.com/vergilet/open_dota_api.svg)](https://gemnasium.com/github.com/vergilet/open_dota_api)
+[![Dependency Status](https://www.versioneye.com/user/projects/59a3b1540fb24f002b6205ef/badge.svg?style=flat)](https://www.versioneye.com/user/projects/59a3b1540fb24f002b6205ef)
+<!--[![Dependency Status](https://gemnasium.com/badges/github.com/vergilet/open_dota_api.svg)](https://gemnasium.com/github.com/vergilet/open_dota_api) -->
+
+###
+> :warning: Please keep request rate to approximately 3/s.
 
 ## Installation
 If you use Rubygems you can type:
@@ -58,11 +60,15 @@ OpenDotaApi.heroes
 
 # Pro players listing
 OpenDotaApi.pro_players
+
+# Explorer output (limited)
+OpenDotaApi.explorer(league_id)
+
 ```
 
 ## Endpoints
 
-#### Leagues
+#### :large_blue_diamond: Leagues
 
 ##### API Method: [leagues](https://docs.opendota.com/#tag/leagues)
 
@@ -83,7 +89,7 @@ league.tier            # String, premiere, pro, amateur
 league.name            # String, league name
 
 ```
-#### Teams
+#### :large_blue_diamond: Teams
 
 ##### API Method: [teams](https://docs.opendota.com/#tag/teams)
 
@@ -106,7 +112,8 @@ team.last_match_time
 team.name
 team.tag
 ```
-#### Matches
+
+#### :large_blue_diamond: Matches
 
 ##### API Method: [matches](https://docs.opendota.com/#tag/matches)
 
@@ -136,9 +143,11 @@ match.cluster
 match.replay_salt
 match.cluster
 match.replay_url
+match.radiant_score         # Integer
+match.dire_score            # Integer
 match.players               # array of players (type OpenDotaApi::Matches::Player)
 ```
-##### Player
+##### :small_blue_diamond: Player
 
 ```ruby
 players = match.players 
@@ -170,7 +179,7 @@ player.roshan_kills
 player.hero_healing
 ```
 
-#### Heroes
+#### :large_blue_diamond: Heroes
 
 ##### API Method: [heroes](https://docs.opendota.com/#tag/heroes)
 
@@ -194,7 +203,7 @@ hero.roles                # array of roles
 hero.legs
 ```
 
-#### Pro Players
+#### :large_blue_diamond: Pro Players
 
 ##### API Method: [proPlayers](https://docs.opendota.com/#tag/proPlayers)
 
@@ -234,6 +243,20 @@ pro_player.is_pro
 pro_player.locked_until
 ```
 
+
+#### :large_blue_diamond: Explorer
+
+##### API Method: [explorer](https://docs.opendota.com/#tag/explorer)
+
+
+```ruby
+explorer = OpenDotaApi.explorer(league_id)
+explorer.class                  # OpenDotaApi::Explorer       
+```
+
+```ruby
+explorer.league_matches_ids     # Array of matches IDs for current league 
+```
 ...
 
 That's all for now.
