@@ -22,6 +22,10 @@ describe OpenDotaApi::Matches::Player do
   let(:tower_kills) { 0 }
   let(:roshan_kills) { 0 }
   let(:hero_healing) { 606 }
+  let(:last_hits) { 73 }
+  let(:firstblood_claimed) { nil }
+  let(:hero_damage) { 13_406 }
+  let(:teamfight_participation) { nil }
 
   let(:match_file) { File.read('spec/data/match.json') }
   let(:response_json) { JSON.parse(match_file) }
@@ -120,6 +124,22 @@ describe OpenDotaApi::Matches::Player do
 
     it 'returns hero healing' do
       expect(player.hero_healing).to eq hero_healing
+    end
+
+    it 'returns last hits' do
+      expect(player.last_hits).to eq last_hits
+    end
+
+    it 'returns firstblood claimed' do
+      expect(player.firstblood_claimed).to eq firstblood_claimed
+    end
+
+    it 'returns hero damage' do
+      expect(player.hero_damage).to eq hero_damage
+    end
+
+    it 'returns teamfight participation' do
+      expect(player.teamfight_participation).to eq teamfight_participation
     end
   end
 end

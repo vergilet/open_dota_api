@@ -86,6 +86,22 @@ module OpenDotaApi
       def hero_healing
         data['hero_healing']
       end
+
+      def last_hits
+        data['last_hits']
+      end
+
+      def firstblood_claimed
+        data['firstblood_claimed']
+      end
+
+      def hero_damage
+        data['hero_damage']
+      end
+
+      def teamfight_participation
+        data['teamfight_participation']
+      end
     end
   end
 end
