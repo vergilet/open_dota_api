@@ -177,6 +177,10 @@ player.kda
 player.tower_kills
 player.roshan_kills
 player.hero_healing
+player.last_hits
+player.firstblood_claimed
+player.hero_damage
+player.teamfight_participation
 ```
 
 #### :large_blue_diamond: Heroes
