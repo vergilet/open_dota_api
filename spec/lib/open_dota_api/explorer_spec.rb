@@ -19,6 +19,10 @@ describe OpenDotaApi::Explorer do
     expect(explorer).to be_a OpenDotaApi::Entity
   end
 
+  it 'is not instantiable' do
+    expect { described_class.instantiate }.to raise_error NotImplementedError
+  end
+
   describe 'default attributes' do
     it "returns league's matches ids" do
       expect(explorer.league_matches_ids).to match_array(match_ids)
