@@ -285,4 +285,4 @@ The gem is available as open source under the terms of the MIT License.
 
 Copyright © 2017 Yaro.
 
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/vergilet/open_dota_api/master/LICENSE)
+[![GitHub license](https://img.shields.io/dub/l/vibe-d.svg)](https://raw.githubusercontent.com/vergilet/open_dota_api/master/LICENSE)
