@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'open_dota_api/entity'
 require 'open_dota_api/matches/player'
 
 module OpenDotaApi
   class Match < Entity
-    ENDPOINT = 'matches'.freeze
+    ENDPOINT = 'matches'
 
     def self.instantiate(_ = nil)
       raise NotImplementedError

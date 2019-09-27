@@ -1,0 +1,29 @@
+AllCops:
+  Exclude:
+    - spec/**/*
+    - spec/*
+    - db/migrate/**
+    - vendor/**
+    - db/**
+    - app/logic/plaid_adapters/fake_transactions_data/**
+  TargetRubyVersion: 2.3
+Documentation:
+  Enabled: false
+
+LineLength:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+ClassLength:
+  Enabled: false
+
+ModuleLength:
+  Enabled: false

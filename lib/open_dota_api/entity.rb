@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'open_dota_api/entities/instantiable'
 require 'hashable'
 
