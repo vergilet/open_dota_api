@@ -13,42 +13,42 @@ module OpenDotaApi
     INTERFACE = 'api'
 
     def leagues(attributes = {})
-      leagues_data = request(League::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) })
+      leagues_data = request(League::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)
       return {} unless leagues_data.success?
 
       League.instantiate(leagues_data)
     end
 
     def teams(attributes = {})
-      teams_data = request(Team::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) })
+      teams_data = request(Team::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)
       return {} unless teams_data.success?
 
       Team.instantiate(teams_data)
     end
 
     def matches(match_id = nil, attributes = {})
-      match_data = request(Match::ENDPOINT, match_id, query_params: { api_key: attributes.delete(:api_key) })
+      match_data = request(Match::ENDPOINT, match_id, query_params: { api_key: attributes.delete(:api_key) }.compact)
       return {} unless match_data.success?
 
       Match.new(match_data)
     end
 
     def heroes(attributes = {})
-      heroes_data = request(Hero::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) })
+      heroes_data = request(Hero::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)
       return {} unless heroes_data.success?
 
       Hero.instantiate(heroes_data)
     end
 
     def pro_players(attributes = {})
-      pro_players_data = request(ProPlayer::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) })
+      pro_players_data = request(ProPlayer::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)
       return {} unless pro_players_data
 
       ProPlayer.instantiate(pro_players_data)
     end
 
     def explorer(league_id = nil, attributes = {})
-      explorer_data = request(Explorer::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.merge(Explorer.query_params(league_id)))
+      explorer_data = request(Explorer::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.merge(Explorer.query_params(league_id)).compact)
       return {} unless explorer_data.success?
 
       Explorer.new(explorer_data)
