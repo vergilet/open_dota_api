@@ -8,4 +8,8 @@ module OpenDotaApi
   def self.client
     @client ||= Client.new
   end
+
+  class << self
+    attr_accessor :api_key
+  end
 end
