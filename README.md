@@ -245,8 +245,8 @@ pro_player.fantasy_role
 pro_player.team_id
 pro_player.team_name
 pro_player.team_tag
-pro_player.is_locked
-pro_player.is_pro
+pro_player.locked?
+pro_player.pro?
 pro_player.locked_until
 ```
 

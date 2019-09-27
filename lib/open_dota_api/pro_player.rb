@@ -81,11 +81,11 @@ module OpenDotaApi
       data['team_tag']
     end
 
-    def is_locked
+    def locked?
       data['is_locked']
     end
 
-    def is_pro
+    def pro?
       data['is_pro']
     end
 
