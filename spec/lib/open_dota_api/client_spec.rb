@@ -27,7 +27,9 @@ describe OpenDotaApi::Client do
   let(:expected_heroes) { OpenDotaApi::Hero.instantiate(response_json) }
   let(:expected_pro_players) { OpenDotaApi::ProPlayers.instantiate(response_json) }
 
-  let(:api_url) { "http://api.opendota.com/api/#{endpoint}/" }
+  let(:api_key) { 'random-value' }
+  let(:params) { "" }
+  let(:api_url) { "http://api.opendota.com/api/#{endpoint}#{params}" }
 
   before do
     stub_request(:get, api_url)
@@ -80,7 +82,7 @@ describe OpenDotaApi::Client do
     end
 
     describe '#heroes' do
-      let(:endpoint) { OpenDotaApi::Hero::ENDPOINT.to_s }
+      let(:endpoint) { OpenDotaApi::Hero::ENDPOINT }
       let(:data_file) { heroes_file }
 
       it 'returns array of objects' do
@@ -93,7 +95,7 @@ describe OpenDotaApi::Client do
     end
 
     describe '#pro_players' do
-      let(:endpoint) { OpenDotaApi::ProPlayer::ENDPOINT.to_s }
+      let(:endpoint) { OpenDotaApi::ProPlayer::ENDPOINT }
       let(:data_file) { pro_players_file }
 
       it 'returns array of objects' do
@@ -107,12 +109,23 @@ describe OpenDotaApi::Client do
 
     describe '#explorer' do
       let(:query) { OpenDotaApi::Explorer.query_params(league_id) }
-      let(:endpoint) { "#{OpenDotaApi::Explorer::ENDPOINT}/?#{query.keys[0]}=#{query.values[0]}" }
+      let(:endpoint) { "#{OpenDotaApi::Explorer::ENDPOINT}" }
+      let(:params) { "?#{query.keys[0]}=#{query.values[0]}" }
       let(:data_file) { explorer_file }
-      let(:api_url) { "http://api.opendota.com/api/#{endpoint}" }
 
       it 'returns array of match ids' do
         expect(client.explorer(league_id).league_matches_ids.is_a?(Array)).to be_truthy
+      end
+
+      context 'API_KEY' do
+        let(:params) { "?api_key=#{api_key}&#{query.keys[0]}=#{query.values[0]}" }
+        before do
+          OpenDotaApi.api_key = api_key
+        end
+
+        it 'returns array of match ids' do
+          expect(client.explorer(league_id).league_matches_ids.is_a?(Array)).to be_truthy
+        end
       end
     end
   end

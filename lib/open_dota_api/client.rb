@@ -62,8 +62,8 @@ module OpenDotaApi
 
     def request(method, argument = nil, query_params: {})
       params = query_params.merge({ api_key: OpenDotaApi.api_key }.compact)
-      argument = argument ? argument.to_s.concat('/') : nil
-      pathname = "/#{INTERFACE}/#{method}/#{argument}"
+      argument = argument ? "/#{argument}" : nil
+      pathname = "/#{INTERFACE}/#{method}#{argument}"
 
       connection.get(pathname, query: params)
     end
