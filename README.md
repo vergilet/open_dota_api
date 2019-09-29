@@ -82,7 +82,7 @@ OpenDotaApi.explorer(league_id)
 
 **Please follow the link to [Get the KEY](https://www.opendota.com/api-keys).**
 
-### Using the API_KEY
+#### Using the API_KEY
 
 After you get you personal key you have two options:
 1. Set `api_key` globally to all your request.
