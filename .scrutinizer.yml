@@ -1,0 +1,11 @@
+checks:
+  ruby: true
+filter:
+  excluded_paths:
+    - spec/*
+build:
+  nodes:
+    analysis:
+      tests:
+        override:
+          - ruby-scrutinizer-run
