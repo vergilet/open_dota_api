@@ -119,11 +119,11 @@ describe OpenDotaApi::ProPlayer do
     end
 
     it 'returns if it is locked' do
-      expect(pro_player.is_locked).to eq is_locked
+      expect(pro_player.locked?).to eq is_locked
     end
 
     it 'returns if it is pro' do
-      expect(pro_player.is_pro).to eq is_pro
+      expect(pro_player.pro?).to eq is_pro
     end
 
     it 'returns locked until' do

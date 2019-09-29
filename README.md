@@ -69,6 +69,48 @@ OpenDotaApi.explorer(league_id)
 
 ```
 
+## Premium Tier (update)
+
+**Beginning 2018-04-22, the OpenDota API is limited to 50,000 free calls per month and 60 requests/minute.**
+
+> We offer a Premium Tier with unlimited API calls and higher rate limits. 
+> Check out the [API page](https://www.opendota.com/api-keys) to learn more.
+
+<p align="center">
+    <a href="https://github.com/vergilet/open_dota_api/tree/9-authentication-support#premium-tier-update"><img width="649" alt="" src="https://user-images.githubusercontent.com/2478436/65829471-a6ac3000-e2ae-11e9-9b67-796e3d980b9f.png"></a>
+</p>
+
+**Please follow the link to [Get the KEY](https://www.opendota.com/api-keys).**
+
+### Using the API_KEY
+
+After you get you personal key you have two options:
+1. Set `api_key` globally to all your request.
+    For Rails application you can create the initializer:
+
+    ```ruby
+    # config/initializers/open_dota_api.rb
+    
+    OpenDotaApi.api_key = [YOUR_KEY_HERE]
+    ```
+
+2. Or you can set `api_key` directly in the request:
+    ```ruby
+    OpenDotaApi.leagues(api_key: [YOUR_KEY_HERE])
+   
+    OpenDotaApi.teams(api_key: [YOUR_KEY_HERE])
+   
+    OpenDotaApi.matches(match_id, api_key: [YOUR_KEY_HERE])
+   
+    OpenDotaApi.heroes(api_key: [YOUR_KEY_HERE])
+   
+    OpenDotaApi.pro_players(api_key: [YOUR_KEY_HERE])
+   
+    OpenDotaApi.explorer(league_id, api_key: [YOUR_KEY_HERE])
+   ```
+   
+Enjoy!
+
 ## Endpoints
 
 #### :large_blue_diamond: Leagues
@@ -245,8 +287,8 @@ pro_player.fantasy_role
 pro_player.team_id
 pro_player.team_name
 pro_player.team_tag
-pro_player.is_locked
-pro_player.is_pro
+pro_player.locked?
+pro_player.pro?
 pro_player.locked_until
 ```
 

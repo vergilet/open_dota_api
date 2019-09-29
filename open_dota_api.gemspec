@@ -1,4 +1,4 @@
-$LOAD_PATH.push File.expand_path('../lib', __FILE__)
+$LOAD_PATH.push File.expand_path('lib', __dir__)
 
 # Maintain your gem's version:
 require 'open_dota_api/version'
@@ -17,12 +17,12 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'httparty', '~> 0.15.6'
   s.add_dependency 'hashable', '~> 0.1.2'
+  s.add_dependency 'httparty', '~> 0.17.1'
 
   s.add_development_dependency 'listen', '~> 3.1', '>= 3.1.5'
-  s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
-  s.add_development_dependency 'webmock', '~> 3.0', '>= 3.0.1'
-  s.add_development_dependency 'simplecov', '~> 0.15.0'
-  s.add_development_dependency 'rake', '~> 12.0', '>= 12.0.0'
+  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.0'
+  s.add_development_dependency 'rspec', '~> 3.8', '>= 3.8.0'
+  s.add_development_dependency 'simplecov', '~> 0.17.1'
+  s.add_development_dependency 'webmock', '~> 3.7', '>= 3.7.5'
 end
