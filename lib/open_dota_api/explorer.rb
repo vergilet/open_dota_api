@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 require 'open_dota_api/entity'
 
 module OpenDotaApi
   class Explorer < Entity
-    ENDPOINT = 'explorer'
+    ENDPOINT = 'explorer'.freeze
 
     def self.instantiate(_ = nil)
       raise NotImplementedError

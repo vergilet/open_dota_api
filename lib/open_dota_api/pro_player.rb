@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 require 'open_dota_api/entity'
 
 module OpenDotaApi
   class ProPlayer < Entity
-    ENDPOINT = 'proPlayers'
+    ENDPOINT = 'proPlayers'.freeze
     def account_id
       data['account_id']
     end

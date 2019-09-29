@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module OpenDotaApi
   module Entities
     module Instantiatable

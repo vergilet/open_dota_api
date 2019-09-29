@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'open_dota_api/connection'
 require 'open_dota_api/league'
 require 'open_dota_api/team'
@@ -10,7 +8,7 @@ require 'open_dota_api/explorer'
 
 module OpenDotaApi
   class Client
-    INTERFACE = 'api'
+    INTERFACE = 'api'.freeze
 
     def leagues(attributes = {})
       leagues_data = request(League::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)

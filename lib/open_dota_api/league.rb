@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 require 'open_dota_api/entity'
 
 module OpenDotaApi
   class League < Entity
-    ENDPOINT = 'leagues'
+    ENDPOINT = 'leagues'.freeze
 
     def league_id
       data['leagueid']
