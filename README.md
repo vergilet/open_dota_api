@@ -82,6 +82,22 @@ OpenDotaApi.explorer(league_id)
 
 **Please follow the link to [Get the KEY](https://www.opendota.com/api-keys).**
 
+#### Requests Limit:
+
+To check the request limit for Free Tier:
+```ruby
+  OpenDotaApi.limits 
+```
+*Output:*
+```ruby
+  {
+    per_min: "0",         # request left for per minute
+    per_month: "49878"    # request left for per month
+  } 
+```
+
+
+
 #### Using the API_KEY
 
 After you get you personal key you have two options:

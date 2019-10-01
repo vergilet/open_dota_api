@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    open_dota_api (0.4.0)
+    open_dota_api (0.4.1)
       hashable (~> 0.1.2)
       httparty (~> 0.17.1)
 
