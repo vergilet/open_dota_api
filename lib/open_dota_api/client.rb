@@ -1,4 +1,5 @@
 require 'open_dota_api/connection'
+require 'open_dota_api/health'
 require 'open_dota_api/league'
 require 'open_dota_api/team'
 require 'open_dota_api/match'
@@ -10,46 +11,41 @@ module OpenDotaApi
   class Client
     INTERFACE = 'api'.freeze
 
-    def leagues(attributes = {})
-      leagues_data = request(League::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)
-      return {} unless leagues_data.success?
+    def limits(attributes = {})
+      return @limits unless @limits.nil?
 
-      League.instantiate(leagues_data)
+      request(Health::ENDPOINT, params: attributes)
+      @limits
+    end
+
+    def leagues(attributes = {})
+      data = request(League::ENDPOINT, params: attributes)
+      League.instantiate(data)
     end
 
     def teams(attributes = {})
-      teams_data = request(Team::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)
-      return {} unless teams_data.success?
-
-      Team.instantiate(teams_data)
+      data = request(Team::ENDPOINT, params: attributes)
+      Team.instantiate(data)
     end
 
     def matches(match_id = nil, attributes = {})
-      match_data = request(Match::ENDPOINT, match_id, query_params: { api_key: attributes.delete(:api_key) }.compact)
-      return {} unless match_data.success?
-
-      Match.new(match_data)
+      data = request(Match::ENDPOINT, match_id, params: attributes)
+      Match.new(data)
     end
 
     def heroes(attributes = {})
-      heroes_data = request(Hero::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)
-      return {} unless heroes_data.success?
-
-      Hero.instantiate(heroes_data)
+      data = request(Hero::ENDPOINT, params: attributes)
+      Hero.instantiate(data)
     end
 
     def pro_players(attributes = {})
-      pro_players_data = request(ProPlayer::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.compact)
-      return {} unless pro_players_data
-
-      ProPlayer.instantiate(pro_players_data)
+      data = request(ProPlayer::ENDPOINT, params: attributes)
+      ProPlayer.instantiate(data)
     end
 
     def explorer(league_id = nil, attributes = {})
-      explorer_data = request(Explorer::ENDPOINT, query_params: { api_key: attributes.delete(:api_key) }.merge(Explorer.query_params(league_id)).compact)
-      return {} unless explorer_data.success?
-
-      Explorer.new(explorer_data)
+      data = request(Explorer::ENDPOINT, params: Explorer.query_params(league_id).merge(attributes))
+      Explorer.new(data)
     end
 
     private
@@ -58,12 +54,23 @@ module OpenDotaApi
       @connection ||= Connection.new
     end
 
-    def request(method, argument = nil, query_params: {})
-      params = query_params.merge({ api_key: OpenDotaApi.api_key }.compact)
-      argument = argument ? "/#{argument}" : nil
-      pathname = "/#{INTERFACE}/#{method}#{argument}"
+    def request(method, argument = nil, params: {})
+      pathname = "/#{INTERFACE}/#{method}#{("/#{argument}" if argument)}"
 
-      connection.get(pathname, query: params)
+      global_api_key = { api_key: OpenDotaApi.api_key }.compact
+
+      data = connection.get(pathname, query: global_api_key.merge(params.compact))
+      return {} unless data.success?
+
+      limits_fixation(data)
+      data
+    end
+
+    def limits_fixation(data)
+      @limits = {
+        per_min: data.headers['x-rate-limit-remaining-minute'],
+        per_month: data.headers['x-rate-limit-remaining-month']
+      }
     end
   end
 end
