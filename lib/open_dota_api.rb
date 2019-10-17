@@ -3,7 +3,7 @@ require 'open_dota_api/version'
 
 module OpenDotaApi
   extend SingleForwardable
-  def_delegators :client, :limits, :leagues, :teams, :matches, :heroes, :pro_players, :explorer
+  def_delegators :client, :limits, :leagues, :teams, :matches, :heroes, :pro_players, :player, :explorer
 
   def self.client
     @client ||= Client.new

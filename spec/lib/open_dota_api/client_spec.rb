@@ -3,10 +3,12 @@ require 'spec_helper'
 describe OpenDotaApi::Client do
   let(:endpoint) {}
   let(:match_id) { 3_149_215_336 }
+  let(:steam_32_id) { 65366604 }
   let(:league_id) { 5401 }
   let(:leagues_file) { File.read('spec/data/leagues.json') }
   let(:teams_file) { File.read('spec/data/teams.json') }
   let(:match_file) { File.read('spec/data/match.json') }
+  let(:player_file) { File.read('spec/data/player.json') }
   let(:heroes_file) { File.read('spec/data/heroes.json') }
   let(:pro_players_file) { File.read('spec/data/pro_players.json') }
   let(:explorer_file) { File.read('spec/data/explorer.json') }
@@ -23,6 +25,7 @@ describe OpenDotaApi::Client do
   let(:expected_leagues) { OpenDotaApi::League.instantiate(response_json) }
   let(:expected_teams) { OpenDotaApi::Team.instantiate(response_json) }
   let(:expected_match) { OpenDotaApi::Match.new(response_json) }
+  let(:expected_player) { OpenDotaApi::Match.new(response_json) }
   let(:expected_heroes) { OpenDotaApi::Hero.instantiate(response_json) }
   let(:expected_pro_players) { OpenDotaApi::ProPlayers.instantiate(response_json) }
 
@@ -132,6 +135,23 @@ describe OpenDotaApi::Client do
 
       it 'updates limits' do
         expect{subject.heroes}.to change{ subject.instance_variable_get(:@limits) }.from(nil).to(Hash)
+      end
+    end
+
+    describe '#players' do
+      let(:endpoint) { "#{OpenDotaApi::Player::ENDPOINT}/#{steam_32_id}" }
+      let(:data_file) { player_file }
+
+      it 'returns object' do
+        expect(subject.players(steam_32_id).is_a?(OpenDotaApi::Player)).to be_truthy
+      end
+
+      it 'returns match' do
+        expect(subject.players(steam_32_id).to_deep_hash).to eq expected_player.to_deep_hash
+      end
+
+      it 'updates limits' do
+        expect{subject.players(steam_32_id)}.to change{ subject.instance_variable_get(:@limits) }.from(nil).to(Hash)
       end
     end
 
