@@ -1,3 +1,8 @@
+<p align="right">
+    <a href="https://github.com/vergilet/open_dota_api"><img align="" src="https://user-images.githubusercontent.com/2478436/51829223-cb05d600-22f5-11e9-9245-bc6e82dcf028.png" width="56" height="56" /></a>
+<a href="https://rubygems.org/gems/open_dota_api"><img align="right" src="https://user-images.githubusercontent.com/2478436/51829691-c55cc000-22f6-11e9-99a5-42f88a8f2a55.png" width="56" height="56" /></a>
+</p>
+
 <p align="center">
    <a href="https://rubygems.org/gems/open_dota_api"><img width="460" src="https://user-images.githubusercontent.com/2478436/28491007-95355790-6ef0-11e7-95b9-a08f585db9e8.png" /></a>
 </p>
