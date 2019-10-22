@@ -8,7 +8,6 @@
 </p>
 
 
-###
 
 :gem: Unofficial Ruby Gem for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
 
@@ -19,7 +18,8 @@
 <!--[![Dependency Status](https://www.versioneye.com/user/projects/59a3b1540fb24f002b6205ef/badge.svg?style=flat)](https://www.versioneye.com/user/projects/59a3b1540fb24f002b6205ef) -->
 <!--[![Dependency Status](https://gemnasium.com/badges/github.com/vergilet/open_dota_api.svg)](https://gemnasium.com/github.com/vergilet/open_dota_api) -->
 
-###
+
+
 > :warning: Please keep request rate to approximately 3/s.
 
 ## Installation
