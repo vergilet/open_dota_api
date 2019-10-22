@@ -12,7 +12,6 @@
 
 :gem: Unofficial Ruby Gem for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
 
-###
 [![Gem Version](https://badge.fury.io/rb/open_dota_api.svg)](https://badge.fury.io/rb/open_dota_api)
 [![Build Status](https://travis-ci.org/vergilet/open_dota_api.svg?branch=master)](https://travis-ci.org/vergilet/open_dota_api)
 [![Code Climate](https://api.codeclimate.com/v1/badges/b27d9ae2e4796c30c290/maintainability)](https://codeclimate.com/github/vergilet/open_dota_api)
