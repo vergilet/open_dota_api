@@ -5,6 +5,7 @@ require 'open_dota_api/team'
 require 'open_dota_api/match'
 require 'open_dota_api/hero'
 require 'open_dota_api/pro_player'
+require 'open_dota_api/player'
 require 'open_dota_api/explorer'
 
 module OpenDotaApi
@@ -41,6 +42,11 @@ module OpenDotaApi
     def pro_players(attributes = {})
       data = request(ProPlayer::ENDPOINT, params: attributes)
       ProPlayer.instantiate(data)
+    end
+
+    def players(account_id = nil, attributes = {})
+      data = request(Player::ENDPOINT, account_id, params: attributes)
+      Player.new(data)
     end
 
     def explorer(league_id = nil, attributes = {})
