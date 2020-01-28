@@ -1,13 +1,16 @@
+<p align="right">
+    <a href="https://github.com/vergilet/open_dota_api"><img align="" src="https://user-images.githubusercontent.com/2478436/51829223-cb05d600-22f5-11e9-9245-bc6e82dcf028.png" width="56" height="56" /></a>
+<a href="https://rubygems.org/gems/open_dota_api"><img align="right" src="https://user-images.githubusercontent.com/2478436/51829691-c55cc000-22f6-11e9-99a5-42f88a8f2a55.png" width="56" height="56" /></a>
+</p>
+
 <p align="center">
    <a href="https://rubygems.org/gems/open_dota_api"><img width="460" src="https://user-images.githubusercontent.com/2478436/28491007-95355790-6ef0-11e7-95b9-a08f585db9e8.png" /></a>
 </p>
 
 
-###
 
 :gem: Unofficial Ruby Gem for [OpenDotaAPI](https://docs.opendota.com/). This API provides Dota 2 related data. 
 
-###
 [![Gem Version](https://badge.fury.io/rb/open_dota_api.svg)](https://badge.fury.io/rb/open_dota_api)
 [![Build Status](https://travis-ci.org/vergilet/open_dota_api.svg?branch=master)](https://travis-ci.org/vergilet/open_dota_api)
 [![Code Climate](https://api.codeclimate.com/v1/badges/b27d9ae2e4796c30c290/maintainability)](https://codeclimate.com/github/vergilet/open_dota_api)
@@ -15,7 +18,8 @@
 <!--[![Dependency Status](https://www.versioneye.com/user/projects/59a3b1540fb24f002b6205ef/badge.svg?style=flat)](https://www.versioneye.com/user/projects/59a3b1540fb24f002b6205ef) -->
 <!--[![Dependency Status](https://gemnasium.com/badges/github.com/vergilet/open_dota_api.svg)](https://gemnasium.com/github.com/vergilet/open_dota_api) -->
 
-###
+
+
 > :warning: Please keep request rate to approximately 3/s.
 
 ## Installation
