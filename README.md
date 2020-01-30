@@ -130,6 +130,8 @@ After you get you personal key you have two options:
     OpenDotaApi.pro_players(api_key: [YOUR_KEY_HERE])
    
     OpenDotaApi.explorer(league_id, api_key: [YOUR_KEY_HERE])
+    
+    OpenDotaApi.players(account_id, api_key: [YOUR_KEY_HERE])
    ```
    
 Enjoy!
