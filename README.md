@@ -71,7 +71,7 @@ OpenDotaApi.pro_players
 # Explorer output (limited)
 OpenDotaApi.explorer(league_id)
 
-# Explorer output (limited)
+# Players (account) details
 OpenDotaApi.players(account_id)
 
 ```
