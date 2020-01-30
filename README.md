@@ -96,7 +96,7 @@ To check the request limit for Free Tier:
   OpenDotaApi.limits 
 ```
 *Output:*
-```ruby
+```hash
   {
     per_min: "0",         # request left for per minute
     per_month: "49878"    # request left for per month
