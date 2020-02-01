@@ -185,7 +185,7 @@ team.tag
 
 #### :large_blue_diamond: Players
 
-##### API Method: [matches](https://docs.opendota.com/#tag/players)
+##### API Method: [players](https://docs.opendota.com/#tag/players)
 
 ```ruby
 account_id = 65366604        # number, is required
