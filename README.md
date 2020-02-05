@@ -71,6 +71,9 @@ OpenDotaApi.pro_players
 # Explorer output (limited)
 OpenDotaApi.explorer(league_id)
 
+# Player (account) details
+OpenDotaApi.players(account_id)
+
 ```
 
 ## Premium Tier (update)
@@ -93,7 +96,7 @@ To check the request limit for Free Tier:
   OpenDotaApi.limits 
 ```
 *Output:*
-```ruby
+```hash
   {
     per_min: "0",         # request left for per minute
     per_month: "49878"    # request left for per month
@@ -127,6 +130,8 @@ After you get you personal key you have two options:
     OpenDotaApi.pro_players(api_key: [YOUR_KEY_HERE])
    
     OpenDotaApi.explorer(league_id, api_key: [YOUR_KEY_HERE])
+    
+    OpenDotaApi.players(account_id, api_key: [YOUR_KEY_HERE])
    ```
    
 Enjoy!
@@ -176,6 +181,41 @@ team.losses
 team.last_match_time
 team.name
 team.tag
+```
+
+#### :large_blue_diamond: Players
+
+##### API Method: [players](https://docs.opendota.com/#tag/players)
+
+```ruby
+account_id = 65366604        # number, is required
+```
+
+```ruby
+player = OpenDotaApi.players(account_id)
+player.class                 # OpenDotaApi::Player
+```
+
+```ruby
+player.account_id
+player.mmr_estimate
+player.plus
+player.contributor?
+player.steam_id
+player.avatar
+player.avatar_medium
+player.avatar_full
+player.profile_url
+player.persona_name
+player.last_login
+player.cheese
+player.loc_country_code
+player.name
+player.tracked_until
+player.rank_tier
+player.competitive_rank
+player.solo_competitive_rank
+player.leaderboard_rank
 ```
 
 #### :large_blue_diamond: Matches
