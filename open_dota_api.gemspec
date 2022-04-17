@@ -18,11 +18,11 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'hashable', '~> 0.1.2'
-  s.add_dependency 'httparty', '~> 0.17.1'
+  s.add_dependency 'httparty', '~> 0.20.0'
 
-  s.add_development_dependency 'listen', '~> 3.1', '>= 3.1.5'
-  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.0'
-  s.add_development_dependency 'rspec', '~> 3.8', '>= 3.8.0'
-  s.add_development_dependency 'simplecov', '~> 0.17.1'
-  s.add_development_dependency 'webmock', '~> 3.7', '>= 3.7.5'
+  s.add_development_dependency 'listen', '~> 3.7'
+  s.add_development_dependency 'rake', '~> 13.0'
+  s.add_development_dependency 'rspec', '~> 3.11'
+  s.add_development_dependency 'simplecov', '~> 0.21'
+  s.add_development_dependency 'webmock', '~> 3.14'
 end
