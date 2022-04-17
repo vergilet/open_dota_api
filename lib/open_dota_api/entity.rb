@@ -15,9 +15,11 @@ module OpenDotaApi
     def self.define_child_entity(entity_klass, attribute)
       define_method(attribute) do
         ivar_name = "@#{attribute}"
-        instance_variable_defined?(ivar_name) ?
-          instance_variable_get(ivar_name) :
+        if instance_variable_defined?(ivar_name)
+          instance_variable_get(ivar_name)
+        else
           instance_variable_set(ivar_name, entity_klass.instantiate(data[attribute]))
+        end
       end
     end
 

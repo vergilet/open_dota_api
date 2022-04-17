@@ -10,7 +10,7 @@ module OpenDotaApi
       end
 
       def team
-        data['team'] == 0 ? :radiant : :dire
+        data['team'].zero? ? :radiant : :dire
       end
     end
   end
