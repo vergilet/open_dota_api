@@ -19,7 +19,7 @@ describe OpenDotaApi::Match do
     let(:players_length) { 10 }
     let(:radiant_score) { 27 }
     let(:dire_score) { 29 }
-    let(:player_class) { OpenDotaApi::Match::Player }
+    let(:player_class) { OpenDotaApi::Matches::Player }
 
     let(:match_file) { File.read('spec/data/match.json') }
     let(:response_json) { JSON.parse(match_file) }
@@ -31,10 +31,6 @@ describe OpenDotaApi::Match do
 
     it 'inherits entity object' do
       expect(match).to be_a OpenDotaApi::Entity
-    end
-
-    it 'is not instantiable' do
-      expect { described_class.instantiate }.to raise_error NotImplementedError
     end
 
     describe 'default attributes' do
@@ -127,7 +123,7 @@ describe OpenDotaApi::Match do
     let(:players_length) { 10 }
     let(:radiant_score) { 29 }
     let(:dire_score) { 32 }
-    let(:player_class) { OpenDotaApi::Match::Player }
+    let(:player_class) { OpenDotaApi::Matches::Player }
 
     let(:match_file) { File.read('spec/data/unofficial_match.json') }
     let(:response_json) { JSON.parse(match_file) }
@@ -139,10 +135,6 @@ describe OpenDotaApi::Match do
 
     it 'inherits entity object' do
       expect(match).to be_a OpenDotaApi::Entity
-    end
-
-    it 'is not instantiable' do
-      expect { described_class.instantiate }.to raise_error NotImplementedError
     end
 
     describe 'default attributes' do

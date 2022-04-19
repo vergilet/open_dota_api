@@ -31,7 +31,7 @@ module OpenDotaApi
 
     def matches(match_id = nil, attributes = {})
       data = request(Match::ENDPOINT, match_id, params: attributes)
-      Match.new(data)
+      Match.instantiate(data)
     end
 
     def heroes(attributes = {})

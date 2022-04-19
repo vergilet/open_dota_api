@@ -7,6 +7,8 @@ module OpenDotaApi
 
       module ClassMethods
         def instantiate(data)
+          return new(data) if data.respond_to?(:keys)
+
           data.map { |data_instance| new(data_instance) }
         end
       end
