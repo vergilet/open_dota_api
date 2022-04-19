@@ -8,4 +8,5 @@ build:
     analysis:
       tests:
         override:
+          - bundle-audit-run
           - ruby-scrutinizer-run
