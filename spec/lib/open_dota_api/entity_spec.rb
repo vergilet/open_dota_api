@@ -32,7 +32,7 @@ describe OpenDotaApi::Entity do
     # This is pretty janky, and doesn't seem necessary, just
     # want to preserve in case others get confused
 
-    let(:instance) { described_class.new({ "a": "a_datum" }) }
+    let(:instance) { described_class.new({ "a"=> "a_datum" }) }
 
     subject { instance.class.define_adder(["a"]) }
 
@@ -70,7 +70,7 @@ describe OpenDotaApi::Entity do
   end
 
   describe ".define_child_entity" do
-    subject { described_class.new({"child_key" => {"d": "e"} }) }
+    subject { described_class.new({"child_key" => {"d"=> "e"} }) }
 
     before(:each) { subject.class.define_child_entity(ChildEntity, "child_key") }
 
