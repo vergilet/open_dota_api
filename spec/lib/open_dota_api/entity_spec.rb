@@ -7,14 +7,13 @@ class ChildEntity < OpenDotaApi::Entity
 end
 
 describe OpenDotaApi::Entity do
-  let(:data) { { "very_nice": "datum" } }
+  let(:data) { { "prime" => "datum" } }
 
   subject { described_class.new(data) }
 
   describe "initializing with a hash adds instance methods to the Entity" do
-      it { is_expected.to respond_to(:very_nice) }
-      it { expect(subject.very_nice).to eq("datum") }
-      it { is_expected.not_to respond_to(:not_nice) }
+      it { is_expected.to respond_to(:prime) }
+      it { expect(subject.prime).to eq("datum") }
   end
 
   describe ".define_adder" do
@@ -32,7 +31,7 @@ describe OpenDotaApi::Entity do
     # This is pretty janky, and doesn't seem necessary, just
     # want to preserve in case others get confused
 
-    let(:instance) { described_class.new({ "a"=> "a_datum" }) }
+    let(:instance) { described_class.new({ "a" => "a_datum" }) }
 
     subject { instance.class.define_adder(["a"]) }
 
@@ -70,12 +69,12 @@ describe OpenDotaApi::Entity do
   end
 
   describe ".define_child_entity" do
-    subject { described_class.new({"child_key" => {"d"=> "e"} }) }
+    subject { described_class.new({"child_key" => {"d" => "e"} }) }
 
     before(:each) { subject.class.define_child_entity(ChildEntity, "child_key") }
 
     it { is_expected.to respond_to(:child_key) }
     it { expect(subject.child_key).to be_a(ChildEntity) }
-    it { expect(subject.child_key.d).to eq "e"}
+    it { expect(subject.child_key.d).to eq("e") }
   end
 end
