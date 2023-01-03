@@ -3,7 +3,7 @@ PATH
   specs:
     open_dota_api (0.4.2)
       hashable (~> 0.1.2)
-      httparty (~> 0.20.0)
+      httparty (>= 0.20, < 0.22)
 
 GEM
   remote: https://rubygems.org/
@@ -17,15 +17,13 @@ GEM
     ffi (1.15.5)
     hashable (0.1.2)
     hashdiff (1.0.1)
-    httparty (0.20.0)
-      mime-types (~> 3.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    mime-types (3.4.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2022.0105)
+    mini_mime (1.1.2)
     multi_xml (0.6.0)
     public_suffix (4.0.7)
     rake (13.0.6)
