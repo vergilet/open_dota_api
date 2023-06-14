@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'hashable', '~> 0.1.2'
-  s.add_dependency 'httparty', '~> 0.20.0'
+  s.add_dependency 'httparty', '>= 0.20', '< 0.22'
 
   s.add_development_dependency 'listen', '~> 3.7'
   s.add_development_dependency 'rake', '~> 13.0'
